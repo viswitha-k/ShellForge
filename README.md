@@ -1,6 +1,6 @@
-## Week 3 Features
+## Week 4 Features
 
-- Command parsing using strtok()
-- Dynamic argv[] construction
-- Modular parser implementation
-- Ready for process execution with execvp()
+- Process creation using fork()
+- Command execution using execvp()
+- Parent-child synchronization using waitpid()
+- Error handling using perror()
