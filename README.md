@@ -1,7 +1,7 @@
-## Week 6 Features
+## Week 7 Features
 
-- Signal handling
-- SIGINT support
-- SIGCHLD support
-- Zombie cleanup
-- Shell survives Ctrl+C
+- Anonymous pipes
+- pipe()
+- dup2()
+- Two-command pipelines
+- IPC using file descriptors
