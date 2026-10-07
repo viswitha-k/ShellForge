@@ -1,15 +1,8 @@
-## Week 7 Features
+## Week 9 Features
 
-- Anonymous pipes
-- pipe()
-- dup2()
-- Two-command pipelines
-- IPC using file descriptors
-
-## Week 8 Features
-
-- Memory leak detection using Valgrind
-- Debugging using GDB
-- AddressSanitizer support
-- Defensive programming practices
-- Improved error handling
+- File descriptor management
+- Output redirection (>)
+- Input redirection (<)
+- Append redirection (>>)
+- Error redirection (2>)
+- File handling using open(), close(), and dup2()
