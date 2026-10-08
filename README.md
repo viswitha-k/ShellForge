@@ -1,8 +1,8 @@
-## Week 9 Features
+## Week 10 Features
 
-- File descriptor management
-- Output redirection (>)
-- Input redirection (<)
-- Append redirection (>>)
-- Error redirection (2>)
-- File handling using open(), close(), and dup2()
+- POSIX thread support
+- Background monitoring thread
+- pthread_create()
+- pthread_join()
+- Mutex synchronization
+- Race condition demonstration
