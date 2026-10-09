@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "../include/jobs.h"
+#include "../include/job_control.h"
 
 int execute_builtin(char **args)
 {
