@@ -5,39 +5,42 @@
 
 int execute_builtin(char **args)
 {
-    char cwd[1024];
-
     if (args[0] == NULL)
         return 1;
-
-    /* exit */
-    if (strcmp(args[0], "exit") == 0)
-    {
-        exit(EXIT_SUCCESS);
-    }
-
-    /* pwd */
-    if (strcmp(args[0], "pwd") == 0)
-    {
-        getcwd(cwd, sizeof(cwd));
-        printf("%s\n", cwd);
-        return 1;
-    }
 
     /* cd */
     if (strcmp(args[0], "cd") == 0)
     {
         if (args[1] == NULL)
         {
-            printf("Usage: cd directory\n");
+            fprintf(stderr, "cd: missing argument\n");
         }
-        else
+        else if (chdir(args[1]) != 0)
         {
-            if (chdir(args[1]) != 0)
-                perror("cd");
+            perror("cd");
         }
 
         return 1;
+    }
+
+    /* pwd */
+    if (strcmp(args[0], "pwd") == 0)
+    {
+        char cwd[1024];
+
+        if (getcwd(cwd, sizeof(cwd)) != NULL)
+            printf("%s\n", cwd);
+        else
+            perror("pwd");
+
+        return 1;
+    }
+
+    /* exit */
+    if (strcmp(args[0], "exit") == 0)
+    {
+        printf("Goodbye!\n");
+        exit(0);
     }
 
     /* clear */

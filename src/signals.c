@@ -15,9 +15,6 @@ static void sigint_handler(int sig)
 static void sigchld_handler(int sig)
 {
     (void)sig;
-
-    while (waitpid(-1, NULL, WNOHANG) > 0)
-        ;
 }
 
 void initialize_signals(void)

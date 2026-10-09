@@ -10,17 +10,22 @@ SRC = src/main.c \
       src/signals.c \
       src/pipes.c \
       src/redirect.c \
-      src/thread.c
+      src/thread.c \
+
 
 TARGET = bin/shellforge
 
-all: $(TARGET)
+all: $(TARGET) bin/deadlock
 
 $(TARGET):
 	mkdir -p bin
 	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS) -o $(TARGET)
 
-run:
+bin/deadlock:
+	mkdir -p bin
+	$(CC) $(CFLAGS) src/deadlock.c $(LDFLAGS) -o bin/deadlock
+
+run: $(TARGET)
 	./$(TARGET)
 
 asan:
@@ -28,3 +33,5 @@ asan:
 
 clean:
 	rm -rf bin/*
+
+.PHONY: all run clean asan

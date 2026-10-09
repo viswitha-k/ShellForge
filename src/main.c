@@ -81,11 +81,11 @@ int main()
             {
                 if (execute_builtin(tokens) == 0)
                 {
-                     if (execute_redirection(tokens) == 0)
-                     {
-                           execute(tokens);
-                     }
-                 }
+                    if (execute_redirection(tokens) == 0)
+                    {
+                        execute(tokens);
+                    }
+                }
             }
 
             free_tokens(tokens);
